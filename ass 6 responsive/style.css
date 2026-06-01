@@ -1,0 +1,323 @@
+@font-face {
+  font-family: "robotomono-medium";
+  src: url("assets/RobotoMono-Medium.ttf");
+}
+
+@font-face {
+  font-family: "robotomono-Regular";
+  src: url("assets/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Reckless";
+  src: url("assets/RecklessCondensedS-TRIAL-Book.ttf");
+}
+
+@font-face {
+  font-family: "figtree";
+  src: url("assets/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.ttf");
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 95%;
+  width: 100%;
+  background-size: 1980px;
+  background-position: top;
+  background-image: url("assets/AlpineBerry-\ wide.webp");
+}
+
+.offers {
+  background-color: rgb(42, 40, 87);
+  padding: 10px 0px;
+  text-align: center;
+}
+
+.offers p {
+  font-family: "robotomono-medium";
+  font-size: small;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1% 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 0px;
+  background-color: white;
+  position: sticky;
+  top: 2px;
+  z-index: 14;
+}
+
+.navleft {
+  display: flex;
+  padding: 0px 15px;
+  gap: 30px;
+  width: 30%;
+  text-align: center;
+}
+
+.navleft div a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-family: "Reckless";
+  display: flex;
+  gap: 10px;
+}
+
+.navleft div a span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.sp-circle {
+  background-color: rgb(160, 200, 255);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.navleft .left-menu {
+  font-size: 25px;
+  display: none;
+}
+
+.navmenu {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  gap: 25px;
+  position: relative;
+}
+
+.navmenu a {
+  color: black;
+  text-decoration: none;
+  font-family: "robotomono-medium";
+  font-size: 13px;
+}
+
+.sp-circley {
+  background-color: rgb(255, 181, 0);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: absolute;
+  top: 4px;
+  left: 465px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  width: 48%;
+  padding: 20px;
+  position: absolute;
+  margin-top: 0px;
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* background-color: aquamarine; */
+}
+
+.hero-content h1 {
+  font-size: 85px;
+  font-family: "Reckless";
+  color: white;
+  word-spacing: 2;
+  font-weight: 550;
+  letter-spacing: 2;
+}
+
+.hero-content h4 {
+  font-size: 18px;
+  font-family: "figtree";
+  font-weight: 550;
+  color: white;
+}
+
+.hero-content .shopnow {
+  background-color: rgb(42, 40, 87);
+  color: white;
+  font-family: "figtree";
+  width: 200px;
+  padding: 14px 12px;
+  border-radius: 35px;
+  font-size: 17px;
+}
+
+.hero-content svg {
+  color: rgb(255, 255, 255);
+}
+
+.svg-accessibility {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(95, 199, 166);
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  position: fixed;
+  top: 92%;
+}
+
+.check{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 660px) {
+  main {
+    height: 100%;
+    width: 100%;
+    background-image: url("assets/AlpineBerry_mobile\ \(1\).webp");
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+  }
+
+  .hero-content {
+    width: 95%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:end;
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 0px;
+   
+  }
+
+    .hero-content h1 {
+    font-size: 60px;
+  }
+
+  .svg-accessibility {
+    position: fixed;
+    left: 2%;
+  }
+
+
+.navleft div {
+    display: none;
+  }
+
+  .navleft .left-menu {
+    display: block;
+  }
+
+  .smenu {
+    display: none;
+  }
+
+  .navbar {
+    /* background-color: orange; */
+    display: grid;
+    grid-template-columns: 2fr 2fr 0.4fr;
+  }
+
+
+    .sp-circley {
+    position: absolute;
+    z-index: 12;
+    left: 32px;
+    top: 12px;
+  }
+ 
+    .hero-content .shopnow {
+    background-color: rgb(42, 40, 87);
+    font-family: "figtree";
+    width: 80%;
+    padding: 14px 12px;
+    border-radius: 35px;
+    font-size: 17px;
+  }
+
+}
+
+@media (min-width:661px) and (max-width: 1024px) {
+  main {
+    background-position: 20% 40%;
+    background-size: cover;
+    background-image: url("assets/AlpineBerry_mobile\ tab.webp");
+  }
+
+  .navleft div {
+    display: none;
+  }
+
+  .navleft .left-menu {
+    display: block;
+  }
+
+  .smenu {
+    display: none;
+  }
+
+  .navbar {
+    /* background-color: orange; */
+    display: grid;
+    grid-template-columns: 2fr 2fr 0.4fr;
+  }
+
+  .sp-circley {
+    position: absolute;
+    z-index: 12;
+    left: 32px;
+    top: 12px;
+  }
+
+  .hero-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 340px;
+  }
+
+  .hero-content h1 {
+    font-size: 60px;
+  }
+
+  .svg-accessibility {
+    position: fixed;
+    left: 2%;
+  }
+
+  .hero-content .shopnow {
+    background-color: rgb(42, 40, 87);
+    font-family: "figtree";
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 35px;
+    font-size: 17px;
+  }
+}
