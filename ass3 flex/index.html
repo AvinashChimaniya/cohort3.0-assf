@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital-Hunters</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap");
+      :root {
+        --backgroundd: #02080e;
+        --cyantext: #0da187;
+        --primarytext: #ffffff;
+        --bordercol: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-black">
+    <main class="h-full w-full px-10 bg-[var(--backgroundd)]">
+      <!-- navbar -->
+      <nav
+        class="bg-[var(--backgroundd)] py-2 flex justify-between items-center"
+      >
+        <!-- navleft -->
+
+        <div class="logo flex justify-center items-center">
+          <div
+            class="icon flex justify-center items-center h-20 w-20 object-cover"
+          >
+            <img src="assets/dhlogo.png" alt="" srcset="" />
+          </div>
+          <div class="namee font-[Orbitron] text-white">
+            <h4>DIGITAL</h4>
+            <h4>HUNTERS</h4>
+          </div>
+        </div>
+
+        <!-- navmenu -->
+
+        <div class="font-[Orbitron] flex gap-4 text-white">
+          <div class="clicked">
+            <a href="">Home</a>
+            <div class="linegreen w-13 h-1 bg-[var(--cyantext)]"></div>
+          </div>
+          <a href="">About Us</a>
+          <a href="">Projects</a>
+          <a href="">Services</a>
+          <a href="">Contacts</a>
+        </div>
+
+        <!-- contact menu button  -->
+
+        <div class="contact">
+          <button
+            class="px-5 py-2 font-[Orbitron] text-sm rounded-[23px] border border-[var(--cyantext)] text-white"
+          >
+            Contact Us <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- ** section 1 hero section  -->
+
+      <section class="w-full h-full relative py-5 flex">
+        <!-- left hero section  -->
+        <div class="spaceman absolute left-[35vw] object-cover h-140 w-140">
+          <img src="assets/warrior.png" alt="" />
+        </div>
+
+        <div class="left w-[80%] pt-10 flex flex-col">
+          <h2 class="text-3xl text-[var(--cyantext)]">WE CREATE</h2>
+          <h1
+            class="text-9xl font-[Orbitron] font-bold leading-none text-[var(--primarytext)]"
+          >
+            DIGITAL
+          </h1>
+          <h1
+            class="text-[110px] font-[Orbitron] leading-none font-semibold text-[var(--cyantext)]"
+          >
+            HUNTERS
+          </h1>
+          <h4 class="text-gray-400 text-4xl mt-4">
+            MOBILE & XR GAME <br />
+            DEVELOPMENT STUDIO
+          </h4>
+          <h5 class="text-gray-400 mt-4">
+            Creating unique mobile and XR games <br />
+            with captivating gameplay and strong <br />
+            visual delivery.
+          </h5>
+          <div class="buttons flex justify-start mt-4 items-center gap-14">
+            <button
+              class="px-5 py-2 rounded-md border-2 border-[var(--cyantext)] bg-gradient-to-r from-[var(--backgroundd)] to-[var(--cyantext)] text-gray-300 text-lg"
+            >
+              Discuss Project
+              <i class="ri-arrow-right-line text-white text-[20px]"></i>
+            </button>
+            <button
+              class="px-5 rounded-md text-gray-300 text-lg flex items-center gap-8 justify-center"
+            >
+              <div
+                class="circle bg-black rounded-[50%] h-[40px] w-[40px] border border-gray flex items-center justify-center"
+              >
+                <i class="ri-arrow-right-s-fill text-white text-[30px]"></i>
+              </div>
+              Watch Showreel
+            </button>
+          </div>
+        </div>
+
+        <!-- right section  -->
+
+        <div class="right w-[20%] pt-22 flex flex-col justify-start">
+          <!-- main box containing 3 boxes  -->
+
+          <div class="boxes w-full flex gap-20 pt-2 flex-col">
+            <!-- box 1 -->
+            <div
+              class="box w-[60%] flex justify-center items-center gap-4 h-full"
+            >
+              <div
+                class="flex justify-center items-center w-15 h-12 border-2 rounded-[15px] border-[var(--cyantext)] shadow-[0_0_10px_var(--cyantext)]"
+              >
+                <i class="ri-gamepad-fill text-3xl text-[var(--cyantext)]"></i>
+              </div>
+              <div class="textt text-[Orbitron] text-gray-500">
+                MOBILE <br />
+                GAMES
+              </div>
+            </div>
+
+            <!-- box -2  -->
+
+            <div
+              class="box w-[60%] flex justify-center items-center gap-4 h-full"
+            >
+              <div
+                class="flex justify-center items-center w-15 h-12 border-2 rounded-[15px] border-[var(--cyantext)] shadow-[0_0_10px_var(--cyantext)]"
+              >
+                <i class="ri-radio-2-fill text-3xl text-[var(--cyantext)]"></i>
+              </div>
+              <div class="textt text-[Orbitron] text-gray-500">
+                XR/VR <br />
+                PROJECT
+              </div>
+            </div>
+
+            <!-- box 3  -->
+
+            <div
+              class="box ml-6 w-[60%] flex justify-center items-center gap-4 h-full"
+            >
+              <div
+                class="flex justify-center items-center w-15 h-12 border-2 rounded-[15px] border-[var(--cyantext)] shadow-[0_0_10px_var(--cyantext)]"
+              >
+                <i
+                  class="ri-space-ship-2-fill text-3xl text-[var(--cyantext)]"
+                ></i>
+              </div>
+              <div class="textt text-[Orbitron] text-gray-500">
+                FULL <br />
+                DEVELOPMENT <br />
+                CYCLE
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- status section  -->
+
+      <section class="w-full relative  h-full bg-[var(--backgroundd)]">
+        <div
+          class="glass overflow-hidden  h-[230px] bg-[rgb(23,23,13)] flex justify-center items-center gap-15 border-2 border-gray-900 rounded-[30px]"
+        >
+
+        <div class="star1 absolute left-[82vw] object-cover h-60 w-50">
+            <img src="assets/star1.png" alt="">
+        </div>
+        <div class="star2 absolute  left-[2vw] object-cover h-60 w-50">
+            <img src="assets/star2.png" alt="" srcset="">
+        </div>
+
+
+          <div class="w-[15%] font-[Orbitron] flex flex-col gap-2 text-center pr-10 border-r-4 border-gray-400">
+            <h1 class="text-5xl text-[var(--cyantext)]">6+</h1>
+            <h3 class="text-white"> Years Of Experience</h3>
+          </div>
+
+           <div class="w-[15%] flex flex-col font-[Orbitron] gap-2 text-center pr-10 border-r-4 border-gray-400">
+            <h1 class="text-5xl text-[var(--cyantext)] ">25+</h1>
+            <h3 class="text-white"> Realized Projects</h3>
+          </div>
+
+           <div class="w-[15%] font-[Orbitron] flex flex-col gap-2 text-center pr-10 border-r-4 border-gray-400">
+            <h1 class="text-5xl text-[var(--cyantext)] ">15M+<h1>
+            <h3 class="text-white">Game Downloads</h3>
+          </div>
+
+            <div class="w-[15%] flex flex-col gap-2  font-[Orbitron] text-center pr-10 border-r-4 border-gray-400">
+            <h1 class="text-5xl text-[var(--cyantext)]  ">30+</h1>
+            <h3 class="text-white">Team Specialists</h3>
+          </div>
+
+
+        </div>
+      </section>
+
+      <!-- project sections  -->
+
+
+      <section class="projects mt-4 w-full h-full bg-[var(--backgroundd)]">
+
+        <!-- project heading  -->
+        <div class="heading text-center ">
+            <h3 class="text-2xl text-[var(--cyantext)] font-[Orbitron]">PROJECTS</h3>
+            <h1 class="mt-2 text-5xl text-[var(--primarytext)] font-[Orbitron]">OUR PROJECTS</h1>
+        </div>
+
+        <!-- all four project examples div -->
+
+        <div class="projects flex gap-4 pt-4  w-full mt-10 pb-10">
+
+            <!-- project 1  -->
+
+
+            <div class="w-[32%] border border-gray-600 rounded-[22px] bg-green details">
+                <div class="pimage object-cover rounded-lg h-68 w-full bg-yellow-200 ">
+                    <img src="assets/sledhockey.jpg" alt="">
+                </div>
+                <h3 class="text-gray-400 p-2">Dynamic arcade hockey with unique <br> mechanics and multiplayer</h3>
+                <div class="flex justify-between p-2">
+                    <div class="lefticon flex gap-4 ">
+                        <i class="ri-android-fill text-[var(--cyantext)]"></i>
+                        <i class="ri-apple-fill text-gray-300"></i>
+                    </div>
+                    <div class="nextbtn flex justify-center items-center w-10 h-10 rounded-[50%] border border-[var(--cyantext)]"><i class="ri-arrow-right-line text-[var(--cyantext)]"></i></div>
+              </div>
+            </div>
+
+            <!-- Project2  -->
+
+              <div class="w-[32%] border border-gray-600 rounded-[22px] bg-green details">
+                <div class="pimage object-cover rounded-lg h-68 w-full bg-yellow-200 ">
+                    <img src="assets/projectgenesis.jpg" alt="">
+                </div>
+                <h3 class="text-gray-400 p-2">Dynamic arcade hockey with unique <br> mechanics and multiplayer</h3>
+                <div  class="flex justify-between p-2">
+                    <div class="lefticon flex gap-4 p-2">
+                        <i class="ri-android-fill text-[var(--cyantext)]"></i>
+                        <i class="ri-apple-fill text-gray-300"></i>
+                    </div>
+                    <div class="nextbtn flex justify-center items-center w-10 h-10 rounded-[50%] border border-[var(--cyantext)]"><i class="ri-arrow-right-line text-[var(--cyantext)]"></i></div>
+              </div>
+            </div>
+
+            <!-- project3 -->
+
+
+              <div class="w-[32%] border border-gray-600 rounded-[22px]  details">
+                <div class="pimage object-cover rounded-lg h-68 w-full bg-yellow-200 ">
+                    <img src="assets/Mechanic-park.jpg" alt="">
+                </div>
+                <h3 class="text-gray-400 p-2">Dynamic arcade hockey with unique <br> mechanics and multiplayer</h3>
+                <div  class="flex justify-between p-2">
+                    <div class="lefticon flex gap-4 p-2">
+                        <i class="ri-android-fill text-[var(--cyantext)]"></i>
+                        <i class="ri-apple-fill text-gray-300"></i>
+                    </div>
+                    <div class="nextbtn flex justify-center items-center w-10 h-10 rounded-[50%] border border-[var(--cyantext)]"><i class="ri-arrow-right-line text-[var(--cyantext)]"></i></div>
+              </div>
+            </div>
+
+
+        </div>
+
+
+      </section>
+
+
+    </main>
+  </body>
+</html>
