@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+
+      <!-- this is navbar -->
+
+      <nav>
+        <h1>Task_Manger</h1>
+      </nav>
+
+      <!-- this is task form  -->
+
+      <div class="createTask">
+        <h2>Enter your task details</h2>
+        <form action="">
+          <input type="text" placeholder="enter your task" />
+        
+          <select name="task-type" id="wslect">
+            <option selected hidden disabled >Task urgency</option>
+            <option name="argent" value="argent">urgent</option>
+            <option name="delayed" value="delayed">delayed</option>
+          </select>
+           <div class="task_timing">
+            <div class="initial">
+              <input name="start-date" type="date" />
+              <label for="start-date">start-date</label>
+            </div>
+            <div class="final">
+              <input name="deadline" type="date" />
+              <label for="deadline">task-deadline</label>
+            </div>
+          </div>
+          <button class="addtotask">add to tasks</button>
+        </form>
+        <h2>your tasks</h2>
+      </div>
+
+
+      <!--This is task list container  -->
+
+      <div class="tasks">
+
+        <!-- the task div starts here -->
+
+        <div class="task">
+          <h3 class="indicator">Task</h3>
+          <div class="taskdata">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam dolorem doloremque odio aspernatur natus hic sapiente quos quasi sint alias velit aperiam repudiandae dolores, cum similique inventore aliquam deserunt et.</h3>
+         </div>
+          <div class="deadlines">
+               <h4 class="criteria">urgent</h4>
+              <h5 class="start">start date</h5>
+              <h5 class="end">end date</h5>
+          </div>
+          <div class="modify">
+            <button class="updttask">update_Task</button>
+            <button class="dlttask">delete_Task</button>
+          </div>
+          <button class="task-situation">click if completed</button>
+        </div>
+
+  <!-- here the task div ends -->
+
+      </div>
+
+<!-- here the task div container ends -->
+  
+
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
