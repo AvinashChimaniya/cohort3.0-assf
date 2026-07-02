@@ -1,0 +1,1006 @@
+
+:root{
+  /* --theme-dcolor:black; */
+  --theme-dcolor:white;
+  /* --theme-bcolor:rgb(41, 41, 41);/ */
+  --theme-bcolor:rgb(247,248,250);
+  --theme-font:rgb(31, 31, 31);
+  /* --theme-font:white; */
+
+}
+
+/* .darktheme{
+  --theme-dcolor:black;
+  --theme-bcolor:rgb(62, 62, 62);
+  --them-font:white;
+} */
+
+/* .lighttheme{
+
+} */
+
+@font-face {
+  font-family: "fa-solid";
+  src: url(assets/fa-solid-900.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--theme-bcolor);
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* login form css */
+
+.login {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.loginform {
+  /* height: 28vw; */
+  width: 28vw;
+  background-color: var(--theme-dcolor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  padding: 50px 30px;
+  box-shadow: 2px 2px 5px 1px rgb(109, 108, 108);
+}
+
+.loginform h2 {
+  margin-bottom: 5px;
+  font-size: 1.7vw;
+  color: var(--theme-font);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.loginform h3 {
+  font-size: 1.1vw;
+  font-weight: 400;
+  color: var(--theme-font);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.loginform p{
+  color: var(--theme-font);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  
+}
+
+.loginform input {
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 2px solid lightgray;
+  color: bl
+
+}
+
+.inputs label {
+  font: bold;
+  font-size: 1.1vw;
+  color: var(--theme-font);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.rbutton {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(3, 3, 152);
+  color: white;
+  border: 1px solid lightgray;
+}
+
+.registerbtn {
+  cursor: pointer;
+  color: rgb(52, 218, 255);
+}
+
+/* register form css */
+
+.register {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.registerform {
+  width: 28vw;
+  background-color: var(--theme-dcolor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  padding: 50px 30px;
+  box-shadow: 2px 2px 5px 1px rgb(109, 108, 108);
+}
+
+.registerform h2 {
+  margin-bottom: 5px;
+  font-size: 1.7vw;
+  color: var(--theme-font);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.registerform h3 {
+  font-size: 1.1vw;
+  font-weight: 400;
+  color: var(--theme-font);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.registerform p{
+  color: var(--theme-font);
+}
+
+.rinputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  color: black;
+}
+
+.registerform input {
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 2px solid lightgray;
+  color: black;
+}
+
+.rinputs label {
+  font: bold;
+  font-size: 1.1vw;
+  color: var(--theme-font);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.lbutton {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(23, 142, 10);
+  color: white;
+  border: 1px solid lightgray;
+}
+
+.loginbtn {
+  cursor: pointer;
+  color: rgb(36, 255, 12);
+}
+
+/* home page css */
+
+.home_page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow-y: scroll;
+  display: none;
+}
+
+.data::-webkit-scrollbar {
+  display: none;
+}
+
+/* add transaction css */
+
+.trnsadd {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-40%, -50%);
+  width: 400px;
+  /* display: flex; */
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--theme-dcolor);
+  color: var(--theme-font);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid lightgray;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.trnhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--theme-font);
+}
+
+.closetrn {
+  cursor: pointer;
+  font: bold;
+}
+
+.ttype {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+.ttype select {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  color: black;
+}
+
+.tdesc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--theme-font);
+}
+
+.tdesc input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  color: black;
+}
+
+.tamda {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  color: var(--theme-font);
+}
+
+.tamount input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+
+.tdate input {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.tcat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--theme-font);
+}
+
+.tcat select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  color: black;
+}
+
+.stranbtn {
+  width: 100%;
+  color:var(--theme-dcolor);
+  background-color: var(--theme-font);
+
+}
+
+/* sidebarmenu css */
+
+.sidebar {
+  border-right: 1px solid lightgray;
+  padding: 20px;
+  height: 100%;
+  width: 20.3%;
+  background-color:var(--theme-dcolor);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  position: relative;
+}
+
+.logo i {
+  font-size: 30px;
+}
+
+.logotitle h5 {
+  font-weight: 400;
+  color: var(--theme-font);
+}
+
+.logotitle h2 {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--theme-font);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* background-color: red; */
+  /* padding: 20px 0px; */
+  margin-bottom: 20px;
+  color: var(--theme-font);
+}
+
+.dashting {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--theme-dcolor);
+  /* background-color: orange; */
+  
+}
+
+.dashboard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  /* background-color: var(--theme-dcolor); */
+  color: var(--theme-font);
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  /* background-color: var(--theme-dcolor); */
+  color: var(--theme-font);
+}
+
+.dashting a {
+  text-decoration: none;
+  /* color: rgb(69, 69, 69); */
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--theme-font);
+  
+}
+
+.dashting i {
+  font-size: 20px;
+  color: var(--theme-font);
+  /* color: rgb(69, 69, 69); */
+  
+}
+
+.addtrans {
+  background-color: var(--theme-font);
+  padding: 5px;
+  width: 85%;
+  border-radius: 8px;
+  color:var(--theme-dcolor);
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.addtrans span {
+  font-size: 20px;
+}
+
+.data {
+  height: 100%;
+  width: 100%;
+  /* background-color: rgb(247, 248, 250); */
+  overflow-y: scroll;
+}
+
+/* right side menu upper div */
+
+.menu {
+  color: var(--theme-font);
+  padding: 18px 30px;
+  /* background-color: orange; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  background-color:var(--theme-dcolor);
+  gap: 50px;
+  font-weight: 300;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.menu h4 {
+  font-weight: 500;
+}
+
+.lgtbtn {
+  padding: 6px 15px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+}
+
+.lgtbtn i {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* financial overview parent div css */
+
+.dcontent {
+  padding: 30px;
+  display: none;
+  color: var(--theme-font);
+  /* background-color: var(--theme-dcolor); */
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* heading  as dheading */
+
+.dheading h1 {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.dheading h5 {
+  font-weight: 400;
+  font-size: 14px;
+  word-spacing: 1.2px;
+}
+
+/* .dheading{
+    background-color: lightgreen;
+} */
+
+.dcards {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  padding: 30px 0px;
+  color: var(--theme-font);
+}
+
+.dcards h3 {
+  font-weight: 450;
+  /* color: gray; */
+  font-size: 15px;
+}
+
+.dcards h2 {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cbalance {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--theme-dcolor);
+  width: 24%;
+  border-radius: 12px;
+  border: 1px solid lightgray;
+}
+
+.Tincome {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--theme-dcolor);
+  width: 24%;
+  border-radius: 12px;
+  border: 1px solid lightgray;
+  color: green;
+}
+
+.Texpense {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--theme-dcolor);
+  width: 24%;
+  border-radius: 12px;
+  border: 1px solid lightgray;
+  color: red;
+}
+
+.Ttransactions {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 24%;
+  border-radius: 12px;
+  border: 1px solid lightgray;
+  background-color: var(--theme-dcolor);
+}
+
+.bicons {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: rgb(190, 190, 234);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iicons {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: rgb(192, 238, 183);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eicons {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: rgb(255, 187, 187);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tricons {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: rgb(191, 191, 245);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.danpre {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  color: var(--theme-font);
+  background-color: var(--theme-bcolor);
+}
+
+.cflow {
+  background-color: var(--theme-dcolor);
+  padding: 20px;
+  width: 65%;
+  height: 40%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cfchart {
+  height: 250px;
+  width: 100%;
+  background-color: var(--theme-bcolor);
+  border-radius: 8px;
+}
+
+.preference {
+  padding: 20px;
+  background-color: var(--theme-dcolor);
+  color: var(--theme-font);
+  border-radius: 12px;
+  width: 35%;
+  height: 60%;
+}
+
+.thmode {
+  margin-top: 10px;
+  padding: 15px 0px;
+  border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.switchbtn {
+  width: 60px;
+  height: 30px;
+  background-color: lightgray;
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  justify-content: start;
+}
+
+.cicle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.resetData {
+  padding: 8px;
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: rgb(255, 226, 226);
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: red;
+}
+
+.transactions {
+  margin-top: 20px;
+  width: 64%;
+  border-radius: 10px;
+  background-color: var(--theme-dcolor);
+  padding: 12px;
+  border: 1px solid lightgray;
+  overflow: scroll;
+  color: var(--theme-font);
+}
+
+.transactions::-webkit-scrollbar {
+  display: none;
+}
+
+.findd {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.search {
+  width: 35%;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--theme-bcolor);
+  border-radius: 8px;
+  border: 1px solid lightgray;
+}
+
+.filters {
+  width: 65%;
+}
+
+.filters select {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--theme-bcolor);
+  border-radius: 8px;
+  border: 1px solid lightgray;
+}
+
+.fdheading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  border-bottom: 1px solid lightgray;
+  padding: 15px 0px;
+}
+
+.fdheading h4 {
+  font-size: 13px;
+  color: gray;
+  font-weight: 500;
+}
+
+.fsdatacont {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.fsdatacont::-webkit-scrollbar{
+  display: none;
+}
+
+.fsdata {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  border-bottom: 1px solid lightgray;
+}
+
+.categoryd {
+  height: 20px;
+  width: 100px;
+  background-color: var(--theme-bcolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+  font-size: 10px;
+  color: var(--them-font);
+}
+
+.categoryd::-webkit-scrollbar {
+  display: none;
+}
+
+.editfdata {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  color: green;
+  border: none;
+  font-size: 18px;
+}
+
+.delete {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  color: red;
+  border: none;
+  font-size: 18px;
+}
+
+.userprofile {
+  display: none;
+  padding: 30px;
+  background-color: var(--theme-bcolor);
+  color: var(--theme-font);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.upheading h2 {
+  font-size: 28px;
+}
+
+.upheading h5 {
+  color: gray;
+  font-weight: 400;
+}
+
+.pdetails {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--theme-dcolor);
+  width: 70%;
+  border-radius: 12px;
+}
+
+.namecy {
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.name {
+  margin-bottom: 5px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.name input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+
+.currency {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.currency select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+
+.schanges {
+  background-color:var(--theme-font);
+  color: var(--theme-dcolor);
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.stranbtn {
+  padding: 10px;
+  border-radius: 10px;
+}

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FintracPro</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- login page -->
+
+      <div class="login">
+        <form class="loginform">
+          <h2>Welcome Back</h2>
+          <h3>Login to FinTrack Pro</h3>
+          <div class="inputs">
+            <label for="username">Username</label>
+            <input required id="username" type="text" />
+            <label for="password">Password</label>
+            <input required id="password" type="text" />
+            <button class="lbutton">Login</button>
+          </div>
+
+          <p>
+            Don't have and account?
+            <span class="registerbtn">Register here</span>
+          </p>
+        </form>
+      </div>
+
+      <!-- login page ends here -->
+
+      <!-- register page -->
+
+      <div class="register">
+        <form class="registerform">
+          <h2>Create Account</h2>
+          <h3>Join FinTrack Pro</h3>
+          <div class="rinputs">
+            <label for="username">Username</label>
+            <input required="username" type="text" />
+            <label for="password">Password</label>
+            <input required id="password" type="text" />
+            <button class="rbutton">Register</button>
+          </div>
+
+          <p>
+            Don't have and account? <span class="loginbtn">Login here</span>
+          </p>
+        </form>
+      </div>
+
+      <!-- register page ends here  -->
+
+      <!-- logged in home page  -->
+
+      <div class="home_page">
+        <!-- expense insert form -->
+        <form class="trnsadd">
+          <div class="trnhead">
+            <h2>Add Transaction</h2>
+            <div class="closetrn">X</div>
+          </div>
+
+          <div class="ttype">
+            <label for="type">Type</label>
+            <select name="trnstype" id="type">
+              <option value="Expense">Expense</option>
+              <option value="Income">Income</option>
+            </select>
+          </div>
+
+          <div class="tdesc">
+            <label for="description">Description</label>
+            <input type="text" placeholder="e.g Amazon, Salary, Coffee" />
+          </div>
+
+          <div class="tamda">
+            <div class="tamount">
+              <label for="Amount">Amount</label>
+              <input type="number" />
+            </div>
+            <div class="tdate">
+              <label for="date">Date</label>
+              <input type="date" />
+            </div>
+          </div>
+
+          <div class="tcat">
+            <label for="tcategory">Category</label>
+            <select name="tcategory" id="">
+              <option hidden selected value="">Select a category</option>
+              <option value="Food & Dining">Food & Dining</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Recharge & bill">Recharge & bill</option>
+              <option value="Petrol & Auto ">Petrol & Auto</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Salary">Salary</option>
+              <option value="Entertaintment">Entertaintment</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+
+          <button class="stranbtn">Save Transaction</button>
+        </form>
+        <!-- add transaction form ended  -->
+
+        <!-- left menus -->
+        <div class="sidebar">
+          <div class="logo">
+            <div class="logoimg"><i class="ri-stack-fill"></i></div>
+            <div class="logotitle">
+              <h2>FinTrack Pro</h2>
+              <h5>Enterprise Finance</h5>
+            </div>
+          </div>
+
+          <div class="dashting">
+            <div class="dashboard">
+              <i class="ri-microsoft-line"></i>
+              <a href="">Dashboard</a>
+            </div>
+            <div class="setting">
+              <i class="ri-settings-3-fill"></i>
+              <a href="">Setting</a>
+            </div>
+          </div>
+
+          <button class="addtrans">+ Add Transaction</button>
+        </div>
+        <!-- left menu end  -->
+
+        <!-- right profile & data -->
+        <div class="data">
+          <div class="menu">
+            <h4>username</h4>
+            <button class="lgtbtn">
+              <i class="ri-logout-box-r-line"></i>Logout
+            </button>
+          </div>
+
+          <div class="dcontent">
+            <!-- heading -->
+            <div class="dheading">
+              <h1>Financial Overview</h1>
+              <h5>Real-time tracking application</h5>
+            </div>
+
+            <!-- cards -->
+            <div class="dcards">
+              <!-- balance card -->
+              <div class="cbalance">
+                <div class="bicons">
+                  <i class="ri-bank-fill"></i>
+                </div>
+                <div class="balance">
+                  <h3>Current Balance</h3>
+                  <h2>$0.00</h2>
+                </div>
+              </div>
+              <!-- income card -->
+              <div class="Tincome">
+                <div class="iicons">
+                  <i class="ri-arrow-right-up-long-line"></i>
+                </div>
+                <div class="balance">
+                  <h3>Total Income</h3>
+                  <h2>$0.00</h2>
+                </div>
+              </div>
+
+              <!-- expense card -->
+              <div class="Texpense">
+                <div class="eicons">
+                  <i class="ri-arrow-right-down-long-line"></i>
+                </div>
+                <div class="balance">
+                  <h3>Total Expense</h3>
+                  <h2>$0.00</h2>
+                </div>
+              </div>
+
+              <!-- transaction card -->
+              <div class="Ttransactions">
+                <div class="tricons">
+                  <i class="ri-collapse-vertical-line"></i>
+                </div>
+                <div class="balance">
+                  <h3>Total Transaction</h3>
+                  <h2>0</h2>
+                </div>
+              </div>
+            </div>
+            <!-- card div ends here -->
+
+            <!-- analysis and preference div -->
+            <div class="danpre">
+              <div class="cflow">
+                <h2>Cash Flow Analysis</h2>
+                <div class="cfchart"></div>
+              </div>
+              <div class="preference">
+                <h2>Preferences</h2>
+                <div class="thmode">
+                  <h4>Dark Theme</h4>
+                  <btn class="switchbtn">
+                    <div class="cicle"></div>
+                  </btn>
+                </div>
+                <button class="resetData">
+                  <i class="ri-delete-bin-fill"></i>Reset All Data
+                </button>
+              </div>
+            </div>
+
+            <div class="transactions">
+              <h2>All Transactions</h2>
+              <div class="findd">
+                <div class="search">
+                  <input
+                    type="search"
+                    class="trnsearch"
+                    placeholder=" search transactions...."
+                  />
+                </div>
+                <div class="filters">
+                  <select class="soption" name="All types" id="">
+                    <option selected value="All Type">All Type</option>
+                    <option value="Income Only">Income Only</option>
+                    <option value="Expense Only">Expense Only</option>
+                  </select>
+                </div>
+              </div>
+              <div class="fdheading">
+                <h4>DATE</h4>
+                <h4>DESCRIPTION</h4>
+                <h4>CATEGORY</h4>
+                <h4>AMOUNT</h4>
+                <h4>ACTIONS</h4>
+              </div>
+
+              <div class="fsdatacont">
+
+                <div class="fsdata">
+                  <h4>28-06-2026</h4>
+                  <h4>xyz</h4>
+                  <div class="categoryd">Recharge & Bills</div>
+                  <h4>+45444</h4>
+                  <div class="editfdata">
+                    <button class="edit"><i class="ri-pencil-fill"></i></button>
+                    <button class="delete">
+                      <i class="ri-delete-bin-3-fill"></i>
+                    </button>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <form class="userprofile">
+            <div class="upheading">
+              <h2>Settings</h2>
+              <h5>Manage your account profile and app formatting</h5>
+            </div>
+
+            <div class="pdetails">
+              <h2>Profile Details</h2>
+              <div class="namecy">
+                <div class="name">
+                  <label for="fullname">Full Name</label>
+                  <input id="fullname" type="text" />
+                </div>
+                <div class="currency">
+                  <label for="currency">Primary currency</label>
+                  <select name="currency" id="currency">
+                    <option value="$">USD ($)</option>
+                    <option value="€">EURO (€)</option>
+                    <option value="£">POUND (£)</option>
+                    <option value="₹">RUPEE (₹)</option>
+                  </select>
+                </div>
+              </div>
+
+              <button class="schanges">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
