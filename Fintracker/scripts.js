@@ -16,23 +16,43 @@ setbalanceArr = function(balanceArr){
 
 
 getusersArr = function(){
-  return JSON.parse(localStorage.getItem("usersArr"))
+  const stored = localStorage.getItem("usersArr")
+  if (!stored) return []
+  try {
+    return JSON.parse(stored) || []
+  } catch (error) {
+    console.error("Failed to parse usersArr from localStorage:", stored, error)
+    return []
+  }
 }
 
 gettotaltransArr = function(){
-  return JSON.parse(localStorage.getItem("totaltransArr"))
+  const stored = localStorage.getItem("totaltransArr")
+  if (!stored) return []
+  try {
+    return JSON.parse(stored) || []
+  } catch (error) {
+    console.error("Failed to parse totaltransArr from localStorage:", stored, error)
+    return []
+  }
 }
 
 getbalanceArr = function(){
- return JSON.parse(localStorage.getItem("balanceArr"))
+  const stored = localStorage.getItem("balanceArr")
+  if (!stored) return []
+  try {
+    return JSON.parse(stored) || []
+  } catch (error) {
+    console.error("Failed to parse balanceArr from localStorage:", stored, error)
+    return []
+  }
 }
 
 let setcurrency;
 
-
-let usersArr = getusersArr()||[]
-let balanceArr = getbalanceArr()||[] 
-let totaltransArr = gettotaltransArr()||[]
+let usersArr = getusersArr()
+let balanceArr = getbalanceArr()
+let totaltransArr = gettotaltransArr()
 
 console.log(usersArr,balanceArr,totaltransArr)
 
@@ -61,6 +81,9 @@ function loginuf() {
   registercont.style.display = "none";
 }
 
+let cfchart = document.querySelector(".cfchart")
+let finalchart;
+let showchart;
 // new user registration call
 lregsiterbtn.addEventListener("click", function () {
   regisiteruf();
@@ -197,10 +220,17 @@ let loggedUserId;
     let totaltransaction=0;
     let upcurrency;
 
-
+    usersArr = getusersArr()
+  
 let dcards = document.querySelector(".dcards")
 showcards = function(setcurrency="$",b=finaltransaction,i=finalincome,e=finalexpense,nt=totaltransaction){
-dcards.innerHTML = ""
+  totaltransArr = gettotaltransArr()
+  if(totaltransArr.length === 0){
+    nt=0;
+  }else{
+    nt=totaltransaction;
+  }
+  dcards.innerHTML = ""
 dcards.innerHTML = `    <div class="cbalance">
                 <div class="bicons">
                   <i class="ri-bank-fill"></i>
@@ -250,7 +280,7 @@ let truind=null;
 
        function editrdata(id,tid){
         console.log(tid)
-        gettotaltransArr()
+        totaltransArr = gettotaltransArr()
          ueditobj =  totaltransArr.find(function(elem){
            return elem.tid === tid
           })
@@ -268,11 +298,225 @@ let truind=null;
           transactioform[3].value = `${ueditobj.tdate}`
           transactioform[4].value = `${ueditobj.tcat}`
           transactioform.style.display = "flex"
-             
-            
+          
+        
+          showtransaction()
     }
 
+    let dldata;
+    let cd;
+//     function dltdata(id,tid){
+//        gettotaltransArr()
+              
+//             let transind = totaltransArr.findIndex(function(elem){
+//               return  elem.tid === tid;
+//             })
+
+//             totaltransArr = totaltransArr.splice(transind,1)
+//               settotaltransArr(totaltransArr)
+
+//      gettotaltransArr()
+//      loguserArr=[]
+//     loguserArr = totaltransArr.filter(function(elem){
+//        return elem.id === loggedUserId
+//     })
+    
+//     finalincome = 0;
+//     finalexpense = 0;
+//     totaltransaction =0;
+    
+//     loguserArr.forEach(function(elem){
+//       if(elem.id === loggedUserId){
+//         totaltransaction++
+//         if(elem.ttype === "Income"){
+//           finalincome += elem.tamount
+//         }else if(elem.ttype === "Expense"){
+//           finalexpense += elem.tamount
+//         }
+//       }
+//     })
+    
+//     finaltransaction = finalincome-finalexpense;
+    
+//     let balanceObj;
+//     balanceObj = {
+//       id:loggedUserId,
+//       tbalance:finaltransaction,
+//       texamount:finalexpense,
+//       tinamount:finalincome,
+//       ttrans:totaltransaction,
+//       scurrncy:setcurrency
+//     }
+    
+//     let existobj = balanceArr.some(function(elem){
+//       return elem.id === loggedUserId
+//     })
+    
+//     let updataid = balanceArr.findIndex(function(elem){
+//       return elem.id === loggedUserId
+//     })
+    
+//     console.log(existobj);
+//     if(existobj){
+//       balanceArr.splice(updataid,1,balanceObj)
+//       console.log(balanceArr)
+//       setbalanceArr(balanceArr)
+      
+//     }else if(!existobj){
+//       balanceArr.push(balanceObj)
+//       setbalanceArr(balanceArr)
+//     }
+    
+    
+//     let fupd = usersArr.find(function(elem){
+//       return elem.id === loggedUserId
+//     })
+//     showcards(fupd.primarycrncy,fupd.tbalance,fupd.tinamount,fupd.texamount,fupd.ttrans)
+//     showtransaction()
+    
+//  }
+
      let recentrans = document.querySelector(".fsdatacont")
+
+// chart code 
+
+// balanceArr = getbalanceArr()
+// let bad
+// showchart = function(){
+//    if(finalchart){
+//   finalchart.destroy()
+// }
+
+// if(balanceArr.length<0 || balanceArr === []  || !getbalanceArr()){ 
+// let cfcharconfig = {
+//   type:"bar",
+//   data:{
+//     labels:["tbalance","tinamount","texamount"],
+//     datasets:[{
+//       label:"amount",
+//       data:[0,0,0],
+//       backgroundColor:[
+//             "rgba(40,240,240,0.8)",
+//                 "rgba(2,240,0,0.8)",
+//                 "rgba(240,2,20,0.8)",
+//       ],
+//        barThickness:70
+//     }]
+
+//   }
+
+// }
+
+// finalchart = new Chart(cfchart,cfcharconfig)
+
+// }else if(balanceArr.length>0){
+
+// balanceArr = getbalanceArr()
+//   let ccd = balanceArr.find(function(elem){return elem.id === loggedUserId})
+    
+
+// let cfcharconfig = {
+//   type:"bar",
+//   data:{
+//     labels:["tbalance","tinamount","texamount"],
+//     datasets:[{
+//       label:"amount",
+//       data:[ccd.tbalance,ccd.tinamount,ccd.texamount],
+//       backgroundColor:[
+//             "rgba(40,240,240,0.8)",
+//                 "rgba(2,240,0,0.8)",
+//                 "rgba(240,2,20,0.8)",
+//       ],
+//        barThickness:70
+//     }]
+
+//   }
+// }
+
+// finalchart = new Chart(cfchart,cfcharconfig)
+
+// }
+  
+// }
+
+showchart = function () {
+
+    if (finalchart) {
+        finalchart.destroy();
+    }
+
+    balanceArr = getbalanceArr() || [];
+
+    let data = [0, 0, 0];
+
+    const ccd = balanceArr.find(elem => elem.id === loggedUserId);
+
+    if (ccd) {
+        data = [ccd.tbalance, ccd.tinamount, ccd.texamount];
+    }
+
+    finalchart = new Chart(cfchart, {
+        type: "bar",
+        data: {
+            labels: ["tbalance", "tinamount", "texamount"],
+            datasets: [{
+                label: "amount",
+                data: data,
+                backgroundColor: [
+                    "rgba(40,240,240,0.8)",
+                    "rgba(2,240,0,0.8)",
+                    "rgba(240,2,20,0.8)"
+                ],
+                barThickness: 70
+            }]
+        }
+    });
+}
+
+
+let resetdata = document.querySelector(".resetData")
+
+resetdata.addEventListener("click",function(elem){
+
+  usersArr = getusersArr()
+  totaltransArr = gettotaltransArr()
+  balanceArr = getbalanceArr()
+
+  totaltransArr = totaltransArr.filter(function(elem){
+          return elem.id !== loggedUserId
+  })
+
+  settotaltransArr(totaltransArr)
+  
+  balanceArr = getbalanceArr()
+  let balindex = balanceArr.findIndex(function(elem){
+      return elem.id === loggedUserId
+  })
+
+
+  let rbalobj = {
+      id:loggedUserId,
+      tbalance:0,
+      texamount:0,
+      tinamount:0,
+      ttrans:0,
+      scurrncy:"$"
+      
+  }
+
+  console.log("btn clicked")
+  balanceArr.splice(balindex,1,rbalobj)
+  setbalanceArr(balanceArr)
+  
+  balanceArr = getbalanceArr()
+  showcards(setcurrency,0,0,0,0)
+  showchart()
+  showtransaction()
+})
+
+
+
+
 
 loginform.addEventListener("submit", function (lfevent) {
   lfevent.preventDefault();
@@ -284,7 +528,7 @@ loginform.addEventListener("submit", function (lfevent) {
     alert("no field should be empty");
     return;
   } else {
-      getusersArr()
+      usersArr = getusersArr()
       user = usersArr.find(function (elem) {
       return elem.username === lusername;
     });
@@ -334,11 +578,17 @@ loginform.addEventListener("submit", function (lfevent) {
 
     showmenu(user.username)
 
-   
+  let fupdatedobj = usersArr.find(function(elem){
+    return elem.id === loggedUserId
+   })
  recentrans.innerHTML="";
 
   showtransaction = function(){
-    gettotaltransArr()
+    totaltransArr = gettotaltransArr()||[]
+    if(totaltransArr.length === 0){
+      showcards(fupdatedobj.primarycrncy,0,0,0)
+      recentrans.innerHTML=""
+    }else{
     loguserArr=[]
     loguserArr = totaltransArr.filter(function(elem){
        return elem.id === loggedUserId
@@ -354,29 +604,39 @@ loginform.addEventListener("submit", function (lfevent) {
                   <h4>${elem.tamount}</h4>
                   <div class="editfdata">
                     <button onclick="editrdata(${elem.id},${elem.tid})" class="edit"><i class="ri-pencil-fill"></i></button>
-                    <button class="delete">
+                    <button onclick="dldata(${elem.id},${elem.tid})" class="delete">
                       <i class="ri-delete-bin-3-fill"></i>
                     </button>
                   </div>
                 </div>`
     })
+     cd = balanceArr.find(function(elem){return elem.id === loggedUserId})
+    if(cd){ 
+      showcards(setcurrency,cd.tbalance,cd.tinamount,cd.texamount,cd.ttrans)
+    }else{
+      showcards(fupdatedobj.primarycrncy,0,0,0)
+    }}
+    // showcards()
    }
 
+
+   showchart()
    showtransaction()
-
-
-
-
-
-    let fupdatedobj = usersArr.find(function(elem){
+  
+   
+     
+    fupdatedobj = usersArr.find(function(elem){
     return elem.id === loggedUserId
-})
-    let cd = balanceArr.find(function(elem){return elem.id === loggedUserId})
+   })
+
+    cd = balanceArr.find(function(elem){return elem.id === loggedUserId})
     if(cd){ 
       showcards(setcurrency,cd.tbalance,cd.tinamount,cd.texamount,cd.ttrans)
     }else{
       showcards(fupdatedobj.primarycrncy,0,0,0)
     }
+
+   
 
     // showcards() 
   logoutuser = function(){
@@ -384,6 +644,124 @@ loginform.addEventListener("submit", function (lfevent) {
   registercont.style.display = "none";
   homepage.style.display = "none";
   }
+
+
+   dldata = function(id,tid){
+       totaltransArr = gettotaltransArr()
+              
+            let transind = totaltransArr.findIndex(function(elem){
+              return  elem.tid === tid;
+            })
+
+            if (transind !== -1) {
+  totaltransArr.splice(transind, 1)
+}
+              settotaltransArr(totaltransArr)
+
+     loguserArr=[]
+     loguserArr = totaltransArr.filter(function(elem){
+       return elem.id === loggedUserId
+    })
+
+    let fupd = usersArr.find(function(elem){
+      return elem.id === loggedUserId
+    })
+    finalincome = 0;
+    finalexpense = 0;
+    totaltransaction =0;
+    finaltransaction =0;
+
+    let balanceObj;
+    let updataid = balanceArr.findIndex(function(elem){
+      return elem.id === loggedUserId
+    })
+
+    if(loguserArr.length === 0 || transind === -1){
+      showcards(fupd.primarycrncy,0,0,0,0)
+      balanceObj={
+      id:loggedUserId,
+      tbalance:finaltransaction,
+      texamount:finalexpense,
+      tinamount:finalincome,
+      ttrans:totaltransaction,
+      scurrncy:setcurrency
+      }
+
+      balanceArr.splice(updataid,1,balanceObj)
+      setbalanceArr(balanceArr)
+      showcards()
+      gettotaltransArr()
+      showtransaction()
+      showchart()
+      return
+    }
+    
+
+    loguserArr.forEach(function(elem){
+      if(elem.id === loggedUserId){
+        totaltransaction++
+        if(elem.ttype === "Income"){
+          finalincome += elem.tamount
+        }else if(elem.ttype === "Expense"){
+          finalexpense += elem.tamount
+        }
+      }
+    })
+    
+    finaltransaction = finalincome-finalexpense;
+    
+    balanceObj = {
+      id:loggedUserId,
+      tbalance:finaltransaction,
+      texamount:finalexpense,
+      tinamount:finalincome,
+      ttrans:totaltransaction,
+      scurrncy:setcurrency
+    }
+    
+    let existobj = balanceArr.some(function(elem){
+      return elem.id === loggedUserId
+    })
+    
+    
+    console.log(existobj);
+    if(existobj){
+      balanceArr.splice(updataid,1,balanceObj)
+      console.log(balanceArr)
+      setbalanceArr(balanceArr)
+      showtransaction()
+      showchart()
+      
+    }else if(!existobj){
+      balanceArr.push(balanceObj)
+      setbalanceArr(balanceArr)
+      showtransaction()
+      showchart()
+    }
+    
+    usersArr = getusersArr()
+    balanceArr = getbalanceArr()
+
+     udata = usersArr.filter(function(elem){
+        return elem.id === loggedUserId
+      })
+
+     ub = balanceArr.filter(function(elem){
+      return elem.id === loggedUserId
+     }) 
+      
+     showcards(udata.primarycrncy,ub.tbalance,ub.tinamount,ub.texamount,ub.ttrans)
+    }
+    showtransaction()
+    showchart()
+  
+    
+ }
+
+
+
+
+
 
     // profile dom 
 
@@ -404,12 +782,25 @@ let replindex = usersArr.findIndex(function(elem){
 })
 
 let upname = (upfevent.target[0].value).trim()
+let finalname;
+let existingname = usersArr.filter(function(elem){
+   return ( elem.username === upname  && elem.id !== loggedUserId)
+})
+
+console.log(existingname)
+if(existingname.length !== 0){
+  alert("name already taken")
+  return;
+}else{
+   finalname = upname
+}
+
 let upcurrency = upfevent.target[1].value
 
 
 let newobj = {
         id:loggedUserId,
-        username:upname,
+        username:finalname,
         password:lpassword,
         primarycrncy:upcurrency
 }
@@ -424,13 +815,13 @@ setusersArr(usersArr)
 // setcurrency = `${newobj.primarycrncy}`
 console.log(totaltransArr)
 console.log(usersArr)
-let updatedobj = usersArr.find(function(elem){
+let fupdatedobj = usersArr.find(function(elem){
     return elem.id === loggedUserId
 })
 
-showmenu(updatedobj.username)
+showmenu(fupdatedobj.username)
 // showcards(setcurrency)
-getbalanceArr()
+balanceArr = getbalanceArr()
 let cdd = balanceArr.find(function(elem){return elem.id === loggedUserId})
     if(cdd){ 
       showcards(setcurrency,cdd.tbalance,cdd.tinamount,cdd.texamount,cdd.ttrans)
@@ -444,11 +835,19 @@ let cdd = balanceArr.find(function(elem){return elem.id === loggedUserId})
 //     }
 })
 
-
-
 let savetrd = document.querySelector(".trnsadd")
+closetrnsform.addEventListener("click",function(ctnevent){
+     ctnevent.preventDefault()
+    transactioform.style.display = "none"
+      savetrd.reset()
+})
+
+
 savetrd.addEventListener("submit",function(trdevent){
   trdevent.preventDefault()
+
+  console.log("save clicked");
+  console.log(truind);
 
   let transobj;
   
@@ -474,6 +873,7 @@ savetrd.addEventListener("submit",function(trdevent){
         tcat:transcat
     }
 
+    console.log(truind);
     if(truind===null){
       totaltransArr.push(transobj)
       settotaltransArr(totaltransArr)
@@ -481,19 +881,18 @@ savetrd.addEventListener("submit",function(trdevent){
     }else if(truind!==null){
       totaltransArr.splice(truind,1,transobj)
       settotaltransArr(totaltransArr)
+      console.log(truind);
+      truind=null;
+      console.log(truind);
     }
     console.log(totaltransArr)
+
     loguserArr=[]
     loguserArr = totaltransArr.filter(function(elem){
        return elem.id === loggedUserId
     })
 
     console.log(loguserArr)
-
-
-
-
- 
   showtransaction()
   
 
@@ -539,10 +938,12 @@ savetrd.addEventListener("submit",function(trdevent){
       balanceArr.splice(updataid,1,balanceObj)
       console.log(balanceArr)
       setbalanceArr(balanceArr)
+      showchart()
       
     }else if(!existobj){
       balanceArr.push(balanceObj)
       setbalanceArr(balanceArr)
+      showchart()
     }
 
     // logusbalanceArr = balanceArr.filter(function(blobj){
@@ -557,7 +958,7 @@ savetrd.addEventListener("submit",function(trdevent){
     return elem.id === loggedUserId
 })
   showcards(fupd.primarycrncy,fupd.tbalance,fupd.tinamount,fupd.texamount,fupd.ttrans)
-
+  showchart()
   savetrd.reset()
   
 })
@@ -565,7 +966,7 @@ savetrd.addEventListener("submit",function(trdevent){
 
 dashdisplay()
   }
-});
+);
 
 // navbar menu features
 let sidenav = document.querySelector(".sidebar");
@@ -600,15 +1001,13 @@ sidenav.addEventListener("click", function (snvevent) {
 });
 
 addTransactionsbtn.addEventListener("click",function(){
+  truind=null;
   transactioform.style.display = "flex"
 }
 )
 
 
-closetrnsform.addEventListener("click",function(ctnevent){
-     ctnevent.preventDefault()
-    transactioform.style.display = "none"
-})
+
 
 
 let searchbyf = document.querySelector(".search")
@@ -631,7 +1030,7 @@ timerid = setTimeout(() => {
   if(!searchterm){
     filtertrans=[]
     console.log("search is empty")
-     gettotaltransArr()
+    totaltransArr = gettotaltransArr()
     filtertrans = totaltransArr.filter(function(elem){
           if(sfval==="All Type"){
         return elem.id === loggedUserId && (elem.ttype === "Income" || elem.ttype === "Expense")
@@ -654,7 +1053,7 @@ console.log("this is tht filter trans array")
                   <h4>${elem.tamount}</h4>
                   <div class="editfdata">
                     <button onclick="editrdata(${elem.id},${elem.tid})" class="edit"><i class="ri-pencil-fill"></i></button>
-                    <button class="delete">
+                    <button onclick="dldata(${elem.id},${elem.tid})" class="delete">
                       <i class="ri-delete-bin-3-fill"></i>
                     </button>
                   </div>
@@ -663,7 +1062,7 @@ console.log("this is tht filter trans array")
 
       })
   }else{
-  gettotaltransArr()
+  totaltransArr = gettotaltransArr()
   console.log(totaltransArr)
   console.log(searchterm,sfval)
    filtertrans=[]
@@ -690,7 +1089,7 @@ console.log("this is tht filter trans array")
                   <h4>${elem.tamount}</h4>
                   <div class="editfdata">
                     <button onclick="editrdata(${elem.id},${elem.tid})" class="edit"><i class="ri-pencil-fill"></i></button>
-                    <button class="delete">
+                    <button onclick="dtdata(${elem.id},${elem.tid})" class="delete">
                       <i class="ri-delete-bin-3-fill"></i>
                     </button>
                   </div>

@@ -833,10 +833,13 @@ main {
 .filters select {
   width: 100%;
   padding: 10px;
-  background-color: var(--theme-bcolor);
+  background-color: var(--theme-dcolor);
+  color: var(--theme-font);
   border-radius: 8px;
   border: 1px solid lightgray;
 }
+
+
 
 .fdheading {
   display: flex;
